@@ -1,14 +1,21 @@
 package Shop;
 
 public class Food {
+
+    private static int seed;
+
     private String name;
     private String type;
     private double price;
+
+    private int food_id;
 
     public Food(String name, String type, double price) {
         this.name = name; 
         this.type = type; 
         this.price = price;
+        this.food_id = seed;
+        seed++;
     }
 
     public String getName() {
@@ -33,6 +40,10 @@ public class Food {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int GetID() {
+        return this.food_id;
     }
 
     public void displayInfo() {

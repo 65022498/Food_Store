@@ -34,6 +34,21 @@ public class Shop {
         this.openClose = openClose;
     }
 
+    public void Remove(String name) {
+        if( foods.isEmpty() ) {
+            System.out.println(name+" is out of stock.");
+        }
+        else {
+            System.out.println("You bought "+name+".");
+            foods.remove(foods.size() - 1);
+        }
+    }
+
+    public boolean IsFoodIsOutOfStock() {
+        if( foods.size() > 0) return false;
+        return true;
+    }
+
     public void displayInfo() {
         System.out.println("Shop Name : " + name);
         System.out.println("Shop Status : " + openClose);
